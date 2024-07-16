@@ -68,8 +68,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 42), // Adjust padding as needed
+                    padding: const EdgeInsets.symmetric(horizontal: 42),
                     child: IntrinsicHeight(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -282,10 +281,10 @@ class ProfilePage extends StatelessWidget {
                           crossAxisSpacing: 4,
                           mainAxisSpacing: 4,
                         ),
-                        itemCount: 12,
+                        itemCount: localImagePaths.length,
                         itemBuilder: (context, index) {
-                          return Image.network(
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZpoaex0CeTd8FD3E2m2IIGjZorqrezZ8LQQ&s',
+                          return Image.asset(
+                            localImagePaths[index],
                             fit: BoxFit.fill,
                           );
                         },
@@ -301,3 +300,16 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
+
+List<String> localImagePaths = [
+  'assets/images/2.jpg',
+  'assets/images/1.png',
+  'assets/images/3.jpg',
+  'assets/images/2.jpg',
+  'assets/images/3.jpg',
+  'assets/images/2.jpg',
+  'assets/images/1.png',
+  'assets/images/3.jpg',
+  'assets/images/1.png',
+  'assets/images/2.jpg',
+];
